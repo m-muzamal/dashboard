@@ -74,14 +74,20 @@ const Dashbord = () => {
               {data.map((detail, idemploye) => (
                 <tr key={idemploye}>
                   <td>{detail.idemploye}</td>
-                  <td onClick={() => handleClick(detail.idemploye)}>{detail.firstName}</td>
+                  <td onClick={() => handleClick(detail.idemploye)}>
+                    {detail.firstName}
+                  </td>
                   <td>{detail.secondName}</td>
                   <td>{detail.email}</td>
                   <td>{detail.salray}</td>
                   <td>{detail.date}</td>
                   <td>
-                    <AiFillEdit onClick={() => handleEditClick(detail.idemploye)}/>{" "}
+                    <AiFillEdit
+                      className="icon"
+                      onClick={() => handleEditClick(detail.idemploye)}
+                    />{" "}
                     <AiFillDelete
+                      className="icon"
                       onClick={() => handleDelClick(detail.idemploye)}
                     />
                   </td>

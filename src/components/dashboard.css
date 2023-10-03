@@ -12,9 +12,6 @@
   height: 10rem;
   margin-bottom: 20px;
 }
-h1 {
-  font-size: 30px;
-}
 .data {
   display: flex;
   width: 100%;
@@ -23,7 +20,7 @@ h1 {
 }
 .data table {
   width: 100%;
-  font-size: 22px;
+  font-size: 20px;
   border-collapse: collapse;
 }
 .data table th,
@@ -33,7 +30,7 @@ h1 {
   text-align: center;
 }
 .data table th {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   color: black;
 }
 .data table tr {
@@ -44,14 +41,14 @@ h1 {
 }
 .data table td {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
 }
-svg {
+.icon {
   height: 20px;
   width: 20px;
   font-size: large;
 }
-svg:hover {
+.icon:hover {
   color: blue;
   scale: 1.2;
 }

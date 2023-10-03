@@ -113,13 +113,14 @@
                 <div className="item">
                 <label htmlFor="performance">Performance:</label>
                 <input
-                    type="number"
+                    type="range"
                     name="performance"
                     placeholder="0%"
                     required
                     value={data.performance}
                     onChange={handleInputChange}
                 />
+                <p className="value">{data.performance}</p>
                 </div>
                 <div className="item">
                 <label htmlFor="dec">About:</label>

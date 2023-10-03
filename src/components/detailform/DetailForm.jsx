@@ -108,14 +108,16 @@ const DetailForm = () => {
             <div className="item">
               <label htmlFor="performance">Performance:</label>
               <input
-                type="number"
+                type="range"
                 name="performance"
                 placeholder="0%"
                 required
+                value={performance}
                 onChange={(e) => {
                   setPerformance(e.target.value);
                 }}
               />
+              <p>{performance}</p>
             </div>
             <div className="item">
               <label htmlFor="dec">About:</label>

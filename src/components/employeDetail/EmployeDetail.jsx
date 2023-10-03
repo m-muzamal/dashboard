@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./employeDetail.css";
 import { useNavigate, useParams } from "react-router-dom";
-import Graph from "./graph/Graph";
+import Chart from "./chart/Chart";
 
 const EmployeDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [data, setData] = useState({});
+  const [perfor, setPerfor] = useState(0)
 
   const handlClick = () => {
     navigate("/");
@@ -14,11 +15,14 @@ const EmployeDetail = () => {
   useEffect(() => {
     fetch(`http://localhost:3001/api/data/${id}`)
       .then((res) => res.json())
-      .then((res) => setData(res[0]))
+      .then((res) => {
+        setData(res[0]);
+        setPerfor(res[0].performance);
+      })
       .catch((err) => console.log(err));
-  }, [id]);
-
-  return (
+    }, [id]);
+    
+    return (
     <div className="container">
       <div className="box">
         {data && (
@@ -29,8 +33,7 @@ const EmployeDetail = () => {
               </h1>
               <p className="email">{data.email}</p>
               <div className="graph">
-                {/* <div className="pie" data-value="90">{data.performance}%</div> */}
-                <Graph />
+                <Chart  data={perfor}/>
               </div>
               <span className="about">{data.disc}</span>
               <button className="btn back" onClick={handlClick}>
